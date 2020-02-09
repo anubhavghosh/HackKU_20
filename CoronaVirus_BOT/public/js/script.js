@@ -5,28 +5,28 @@ const socket = io();
 const outputYou = document.querySelector('.output-you');
 const outputBot = document.querySelector('.output-bot');
 
-//var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
-//var iOS = !!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform);
-//console.log("IOS = "+iOS);
-/*if(iOS)
+var isSafari = /^((?!chrome|android).)*safari/i.test(navigator.userAgent);
+var iOS = !!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform);
+
+if(iOS)
 {
  console.log("IOS: "+iOS);
  alert("Please use microphone in iPhone keyboard if you want to use Voice Input" );
  location.replace("https://www.apple.com/iphone/");
-}*/
-/*
+}
+
 if ( (navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i))||(navigator.userAgent.match(/safari/i)) ) 
 {  console.log("Platform Apple: true"); 
    location.assign("https://www.google.com");
    
-}*/
-/*
+}
+
 var isAndroid = /(android)/i.test(navigator.userAgent);
 console.log("android Testing: "+isAndroid);
 if(!isAndroid)
 {
  location.assign("https://www.gilabs.co.in/");
-} */
+} 
 
 
 const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition || window.mozSpeechRecognition ||
@@ -64,7 +64,7 @@ recognition.addEventListener('result', (e) => {
   console.log('Text is==>'+text);
 
   outputYou.textContent = text;
- // outputYou.textContent = "fetching....";    
+   
   console.log('Confidence: ' + e.results[0][0].confidence);
 
   socket.emit('chat message', text);
@@ -80,21 +80,12 @@ recognition.addEventListener('error', (e) => {
   outputBot.textContent = 'Error: ' + e.error;
 });
 
-/*function synthVoice(text) {
-  const synth = window.speechSynthesis;
-  var voices = speechSynthesis.getVoices();
-  const utterance = new SpeechSynthesisUtterance();
-  utterance.text = text;
-  utterance.lang = "en-IN";
-  utterance.voice = voices[0];    
-  utterance.rate = 1;
-  synth.speak(utterance);
-}*/
+
 
 socket.on('bot reply', function(replyText) {
   
-   responsiveVoice.speak(replyText,"Hindi Female");   
-   //synthVoice(replyText);
+   responsiveVoice.speak(replyText,"UK English Male");   
+   
 
   if(replyText == '') replyText = '(No answer...)';
   outputBot.textContent = replyText;
