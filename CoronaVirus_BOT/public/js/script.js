@@ -87,6 +87,6 @@ socket.on('bot reply', function(replyText) {
    responsiveVoice.speak(replyText,"UK English Male");   
    
 
-  if(replyText == '') replyText = '(No answer...)';
+  if(replyText == '') replyText = '(No JSON Parsed...)';
   outputBot.textContent = replyText;
 });
