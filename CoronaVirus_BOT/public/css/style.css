@@ -1,0 +1,189 @@
+* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+html {
+  height: 100%;
+}
+body {
+  padding: 0;
+  margin: 0;
+  background-color: #F2F1F1;
+ /* font-family: "HelveticaNeueLight", "HelveticaNeue-Light", "Helvetica Neue Light", "HelveticaNeue", "Helvetica Neue", 'TeXGyreHerosRegular', "Helvetica", "Tahoma", "Geneva", "Arial", 'sans-serif'; 
+  font-weight: 100%; 
+  background: no-repeat;  */ 
+  background-size: 100%;
+  background-position: center;
+ /* color: #333; */
+}
+footer {
+  font-size: 0.75em;
+  color: silver;
+  position: fixed;
+  bottom: 1em;
+  left: 1em;
+}
+footer a {
+  color: #f80;
+}
+header {
+  margin: 2em 0;
+  text-align: center;
+}
+h1, h2, h3 {
+  margin: 0;
+  color:#ffff;
+  text-rendering: optimizeLegibility;
+  text-align: center;
+}
+h1 {
+  font-weight: 400;
+  font-size: 3em;
+}
+h2 {
+  font-weight: 300;
+  margin-top: 0.5em;
+}
+section {
+  margin: 1.5em auto;
+  width: 400px;
+}
+button {
+  display: block;
+  -webkit-appearance: button;
+  -moz-appearance: button;
+  width: 100px;
+  height: 100px;
+  border: 0;
+  border-radius: 50%;
+  padding: .7em 1em;
+  margin: 4em auto 3em;
+  text-align: center;
+  color: #ffff;
+  background: linear-gradient(180deg, #FF0000 0%, #891919 50%, #310000 100%);
+  box-shadow: 2px 8px 40px rgba(63, 200, 201, .4);
+
+  will-change: transform, filter;
+  transition: all 0.3s ease-out;
+}
+.imgg {
+  width: 500px;
+  height: 300px;
+}
+#convo {
+  height: 300px;
+  width: 500px;
+  text-shadow: 1px 1px #1C2833;
+  font-family: "Times New Roman", Times, serif;
+  color: white;
+  font-size: 20px;
+}
+button .fa {
+  font-size: 60px;
+  line-height: 90px;
+  margin: 0;
+  text-shadow: 2px 3px 3px #1C2833;
+}
+button:hover {
+  transform: scale(.90);
+}
+button:active {
+  filter: brightness(.8);
+}
+button:focus {
+  outline: 0;
+}
+.topleft {
+    position: absolute;
+    top: 8px;
+    left: 16px;
+    font-size: 18px;
+    width: 130px;
+    height: 60px;
+  }
+.topright {
+    position: absolute;
+    top: 8px;
+    right: 5px;
+    font-size: 20px;
+    width: 180px;
+    height: 80px;
+  text-align: right;
+}
+.fa {
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: 1.3em;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  margin-left: 10px;
+  color: white;
+}
+
+/*  For chat-logo popup animation*/
+
+.myImg {
+  width: 200px;
+  height: 200px;
+  position: fixed;
+  right: 100px;
+  bottom: 70px;
+  -webkit-animation: mymove 5s infinite; /* Safari 4.0 - 8.0 */
+  animation: mymove 5s infinite;
+}
+
+/* Safari 4.0 - 8.0 */
+@-webkit-keyframes mymove {
+  from {right: 50px;}
+  to {right: 80px;}
+}
+
+@keyframes mymove {
+  from {right: 50px;}
+  to {right: 80px;}
+}
+
+
+#chat_img {
+  position: fixed; right: 60px; bottom: 60px; width: 125px; height: 125px;
+  display: none;
+  border-radius: 50%;
+  background: transparent;
+  animation: swing ease-in-out 1s infinite alternate;
+  transform-origin: center 20px;
+  float:left;
+  /box-shadow: 5px 5px 10px rgba(0,0,0,0.5);/
+}
+.chat_img img {
+  border: 5px solid #f8f8f8;
+  display: block;
+}
+
+.chat_img:after{
+  content: '';
+  position: absolute;  
+  width: 20px; height: 20px;  
+  border: 1px solid #999;
+  bottom: -10px; left: 50%;
+  z-index: 0;
+  border-bottom: none;
+  border-right: none;
+  animation: rotate(90deg);
+}
+.chat_img:before{
+  content: '';
+  position: absolute;
+  width: 5px; height: 5px;
+  bottom: -14px;left: 54%;
+  z-index: 5;
+  border-radius: 50% 50%;
+  background: #000;
+}
+
+@keyframes swing {
+  0% { transform: rotate(5deg); }
+  100% { transform: rotate(-3deg); }
+}
+
+.fa-github::before {
+    content: "\f09b";
+}
