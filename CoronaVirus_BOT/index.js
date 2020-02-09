@@ -4,7 +4,7 @@ require('dotenv').config()
 //const APIAI_TOKEN = process.env.APIAI_TOKEN;
 //const APIAI_SESSION_ID = process.env.APIAI_SESSION_ID;
 
-const APIAI_TOKEN = 'fb91d8987c274d568c656e7f4c71e000';
+const APIAI_TOKEN = '4e264f6af3f641b7a73ca13df492f2d5';
 const APIAI_SESSION_ID = process.env.APIAI_SESSION_ID;
 
 
