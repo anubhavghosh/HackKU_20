@@ -11,21 +11,22 @@ var iOS = !!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform);
 if(iOS)
 {
  console.log("IOS: "+iOS);
+ alert("You can also call via a cell phone" );
  alert("Please use microphone in iPhone keyboard if you want to use Voice Input" );
- location.replace("https://www.apple.com/iphone/");
+ 
 }
 
 if ( (navigator.userAgent.match(/iPhone/i)) || (navigator.userAgent.match(/iPod/i))||(navigator.userAgent.match(/safari/i)) ) 
 {  console.log("Platform Apple: true"); 
-   location.assign("https://www.google.com");
    
+    alert("You can also call via a cell phone" );
 }
 
 var isAndroid = /(android)/i.test(navigator.userAgent);
 console.log("android Testing: "+isAndroid);
 if(!isAndroid)
 {
- location.assign("https://www.gilabs.co.in/");
+  alert("You can also call via a cell phone" );
 } 
 
 
