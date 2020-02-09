@@ -1,0 +1,17 @@
+{
+  "name": "VoiceBot",
+  "description": "Voicebot GILABS",
+  "repository": "https://github.com/anubhavghosh/WebsiteAI",
+  "keywords": ["ai", "api.ai", "bot", "w3c"],
+  "env": {
+    "APIAI_TOKEN": {
+      "description": "API.ai Client access token",
+      "value": ""
+    },
+    "APIAI_SESSION_ID": {
+      "description": "An arbitrary string",
+      "value": ""
+    }
+  },
+  "image": "heroku/nodejs"
+}
